@@ -1,0 +1,9 @@
+<%= form_with(model: User.new) do |f| %>
+  <div class="field">
+    <div class="control">
+      <%= f.label(:name, "Enter your name: " ) %>
+      <%= f.text_field(:name) %>
+    </div>
+  </div>
+  <%= f.button :submit %>
+<% end %>
