@@ -1,0 +1,13 @@
+<%= form_with(url: articles_path) do |f| %>
+  <div class="field">
+    <div class="control">
+      <%= f.label(:title, "Give it a title: " ) %>
+      <%= f.text_field(:title) %><br>
+      <%= f.label(:text, "Article body: " ) %>
+      <%= f.text_area(:text) %><br>
+      <%= f.label(:image, "Image: " ) %>
+      <%= f.text_field(:image) %><br>
+    </div>
+  </div>
+  <%= f.submit('Create') %>
+<% end %>

@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(:author_id => sessions[:user_id],
+    @article = Article.new(:author_id => session[:user_id],
                             :title => params[:title],
                             :text => params[:text],
                             :image => "string")
