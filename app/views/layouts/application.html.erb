@@ -10,6 +10,29 @@
   </head>
 
   <body>
+    <nav class="nav-container">
+      <ul>
+        <li>Brand Image</li>
+        <ul>
+          <li>Home</li>
+          <li>Formula 1</li>
+          <li>Motorsport</li>
+          <li>Nascar</li>
+          <li>Rally</li>
+          <li>VideoGames</li>
+        </ul>
+        <ul>
+          <% if current_user %>
+            <li><%= link_to 'Create Article', new_article_path, class: 'button is-primary'%></li>
+            <li><%= current_user.name %></li>
+            <li><%= link_to 'LOGOUT', sessions_destroy_path, class: 'button is-danger'%></li>
+          <% else %>
+            <li><%= link_to 'LOGIN', sessions_log_in_path, class: 'button is-primary'%></li>
+            <li><%= link_to 'REGISTER', new_user_path, class: 'button is-primary'%></li>
+          <% end %>
+        </ul>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
