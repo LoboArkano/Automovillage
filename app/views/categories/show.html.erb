@@ -6,7 +6,14 @@
     <%= article.author.name %><br>
     <%= article.text %><br>
     <%= article.image %><br>
-    <%= article.votes_count %><br>
+    <%= article.votes.size %><br>
+    <% if current_user %>
+      <% if article.votes.where(:user_id => session[:user_id], :article_id => article.id).size.zero? %>
+        <%= link_to 'Add Vote', votes_create_path(article.id) %>
+      <% else %>
+        <%= link_to 'Remove Vote', votes_destroy_path(article.id) %>
+      <% end %>
+    <% end %>
   <% end %>
   <br>
 <% end %>

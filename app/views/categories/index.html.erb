@@ -1,15 +1,20 @@
-
 <div>Most view by category</div>
 <% @categories.collect do |category| %>
   <%= category.name %><br>
-  <% c = category.articles.order(created_at: :desc).first %>
-  <% if c != nil %>
-    <%= c.title %><br>
-    <%= c.author.name %><br>
-    <%= c.text %><br>
-    <%= c.image %><br>
-    <%= c.votes_count %><br>
+  <% article = category.articles.order(created_at: :desc).first %>
+  <% if article != nil %>
+    <%= article.title %><br>
+    <%= article.author.name %><br>
+    <%= article.text %><br>
+    <%= article.image %><br>
+    <%= article.votes.size %><br>
+    <% if current_user %>
+      <% if article.votes.where(:user_id => session[:user_id], :article_id => article.id).size.zero? %>
+        <%= link_to 'Add Vote', votes_create_path(article.id) %>
+      <% else %>
+        <%= link_to 'Remove Vote', votes_destroy_path(article.id) %>
+      <% end %>
+    <% end %>
   <% end %>
   <br>
 <% end %>
-l

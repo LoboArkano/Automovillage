@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'votes/new'
+  get 'votes/create'
+  get 'votes/destroy'
   get 'categories/new'
   get 'categories/index'
   get 'categories/show'
