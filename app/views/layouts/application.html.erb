@@ -14,7 +14,8 @@
       <ul>
         <li>Brand Image</li>
           <ul>
-            <%= render 'nav_category' %>
+            <li><%= link_to 'Home', root_path %></li>
+            <%= render 'layouts/nav_category' %>
           </ul>
         <ul>
           <% if current_user %>
