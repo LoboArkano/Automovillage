@@ -1,0 +1,15 @@
+
+<div>Most view by category</div>
+<% @categories.collect do |category| %>
+  <%= category.name %><br>
+  <% c = category.articles.order(created_at: :desc).first %>
+  <% if c != nil %>
+    <%= c.title %><br>
+    <%= c.author.name %><br>
+    <%= c.text %><br>
+    <%= c.image %><br>
+    <%= c.votes_count %><br>
+  <% end %>
+  <br>
+<% end %>
+l

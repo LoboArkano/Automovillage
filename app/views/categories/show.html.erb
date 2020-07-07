@@ -1,0 +1,12 @@
+<div>Articles order by most recent</div>
+<%= @category.name %><br>
+<% @articles.collect do |article| %>
+  <% if article != nil %>
+    <%= article.title %><br>
+    <%= article.author.name %><br>
+    <%= article.text %><br>
+    <%= article.image %><br>
+    <%= article.votes_count %><br>
+  <% end %>
+  <br>
+<% end %>
