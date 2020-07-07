@@ -1,10 +1,12 @@
 class CategoriesController < ApplicationController
+  include CategoriesHelper
+
   def new
     @category = Category.new
   end
 
   def index
-    @categories = Category.all.order(:priority)
+    @categories = categories_order_by_priority
   end
 
   def show

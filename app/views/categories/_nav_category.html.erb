@@ -1,0 +1,5 @@
+<% categories_order_by_priority.collect do |category| %>
+  <li>
+    <%= link_to category.name, categories_show_path(category.id) %>
+  </li>
+<% end %>
