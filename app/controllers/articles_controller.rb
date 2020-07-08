@@ -9,6 +9,10 @@ class ArticlesController < ApplicationController
                             :text => params[:text],
                             :image => "string")
     if @article.save
+      params[:category_ids].each do |category_id|
+        Tagging.create(:article_id => @article.id,
+                        :category_id => category_id)
+      end
       redirect_to root_path
     end
   end
