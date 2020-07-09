@@ -6,7 +6,9 @@
     <%= article.title %><br>
     <%= article.author.name %><br>
     <%= article.text %><br>
-    <%= article.image %><br>
+    <p>
+      <%= cl_image_tag(article.image.key, width: 200, crop: :scale) %> 
+    </p>
     <%= article.votes.size %><br>
     <% if current_user %>
       <% if article.votes.where(:user_id => session[:user_id], :article_id => article.id).size.zero? %>

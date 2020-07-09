@@ -11,13 +11,13 @@
 
   <body>
     <nav class="nav-container">
-      <ul>
+      <ul class="links-container d-flex">
         <li>Brand Image</li>
-          <ul>
-            <li><%= link_to 'Home', root_path %></li>
-            <%= render 'layouts/nav_category' %>
-          </ul>
-        <ul>
+        <ul class="d-flex">
+          <li><%= link_to 'Home', root_path %></li>
+          <%= render 'layouts/nav_category' %>
+        </ul>
+        <ul class="d-flex">
           <% if current_user %>
             <li><%= link_to 'Create Article', new_article_path, class: 'button is-primary'%></li>
             <li><%= current_user.name %></li>
