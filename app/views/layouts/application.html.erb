@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   </head>
 
   <body>
@@ -30,19 +31,33 @@
       </ul>
     </nav>
     <%= yield %>
-    <footer>
-      <div>Brand Image</div>
-      <div>
-        <div>Privacy Police</div>
-        <div>Terms & Conditions</div>
-        <div>Copyright 2014. All rights reserved.</div>
-      </div>
-      <div>
-        Connect with us:
-        <i>Twitter</i>
-        <i>Instagram</i>
-        <i>Facebook</i>
-      </div>
+    <footer class="footer-container dark-gray-bg d-flex w-100">
+      <ul class="footer-items-container d-flex w-100">
+        <li class="d-flex">Brand Image</li>
+        <ul class="d-flex">
+          <li><%= link_to 'Privacy Police', root_path, class: 'footer-item orange' %></li>
+          <li><%= link_to 'Terms & Conditions', root_path, class: 'footer-item orange' %></li>
+          <li><%= link_to 'Copyright 2014. All rights reserved.', root_path, class: 'footer-item gray' %></li>
+        </ul>
+        <ul class="footer-items-container d-flex">
+          <li><%= link_to 'Connect with us:', root_path, class: 'footer-item gray'%></li>
+          <li class="social-container orange-bg d-flex">
+            <a href="https://twitter.com/LoboArcano92" target="_blank">
+              <i class="social-icon fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="social-container orange-bg d-flex">
+            <a href="https://www.linkedin.com/in/jose-roberto-perez-jimenez/" target="_blank">
+              <i class="social-icon fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li class="social-container orange-bg d-flex">
+            <a href="https://github.com/LoboArkano" target="_blank">
+              <i class="social-icon fab fa-github-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </ul>
     </footer>
   </body>
 </html>

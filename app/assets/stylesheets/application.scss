@@ -16,7 +16,8 @@
 $body-color: #797474;
 $white: #fff;
 $gray: rgb(117, 117, 117);
-$red:#da0808;
+$dark-gray: #4e443f;
+$orange: #fe6001;
 $pn100: 100%;
 
 body {
@@ -31,6 +32,26 @@ body {
   width: $pn100;
 }
 
+.gray {
+  color: $gray;
+}
+
+.dark-gray {
+  color: $dark-gray;
+}
+
+.dark-gray-bg {
+  background-color: $dark-gray;
+}
+
+.orange {
+  color: $orange;
+}
+
+.orange-bg {
+  background-color: $orange;
+}
+
 .nav-container {
   background-color: $white;
   padding: 10px;
@@ -43,14 +64,49 @@ body {
     .nav-item {
       padding-right: 8px;
       text-decoration: none;
-      color: $gray;
 
       &:visited {
         color: $gray;
       }
 
       &:hover {
-        color: $red;
+        color: $orange;
+      }
+    }
+  }
+}
+
+.footer-container {
+  padding: 10px;
+  height: 50px;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  .footer-items-container {
+    justify-content: space-around;
+    align-items: center;
+
+    .footer-item {
+      padding-right: 5px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline 1px solid;
+      }
+    }
+
+    .social-container {
+      border-radius: 50%;
+      margin-right: 7px;
+      width: 24px;
+      height: 24px;
+      justify-content: center;
+      align-items: center;
+
+      .social-icon {
+        color: $dark-gray;
       }
     }
   }
