@@ -1,3 +1,11 @@
+<div>Most voted article</div>
+<% article = Article.all.order('votes_count IS NULL, votes_count desc').first %>
+<%= article.title %><br>
+<%= article.author.name %><br>
+<%= article.text %><br>
+<p>
+  <%= image_tag(article.picture, width: 200, crop: :scale) %> 
+</p>
 <div>Most view by category</div>
 <% @categories.collect do |category| %>
   <%= category.name %><br>
@@ -6,7 +14,9 @@
     <%= article.title %><br>
     <%= article.author.name %><br>
     <%= article.text %><br>
-    <%= article.image %><br>
+    <p>
+      <%= image_tag(article.picture, width: 200, crop: :scale) %> 
+    </p>
     <%= article.votes.size %><br>
     <% if current_user %>
       <% if article.votes.where(:user_id => session[:user_id], :article_id => article.id).size.zero? %>

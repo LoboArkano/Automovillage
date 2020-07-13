@@ -1,13 +1,13 @@
 class ArticlesController < ApplicationController
+  include ArticlesHelper
+
   def new
     @article = Article.new
   end
 
   def create
-    @article = Article.new(:author_id => session[:user_id],
-                            :title => params[:title],
-                            :text => params[:text],
-                            :image => "string")
+    user = User.find(session[:user_id])
+    @article = user.articles.new(article_params)
     if @article.save
       params[:category_ids].each do |category_id|
         Tagging.create(:article_id => @article.id,
@@ -19,5 +19,9 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :text, :picture)
   end
 end
