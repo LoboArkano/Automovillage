@@ -10,21 +10,21 @@
   </head>
 
   <body>
-    <nav class="nav-container">
-      <ul>
+    <nav class="nav-container d-flex">
+      <ul class="links-container d-flex w-100">
         <li>Brand Image</li>
-          <ul>
-            <li><%= link_to 'Home', root_path %></li>
-            <%= render 'layouts/nav_category' %>
-          </ul>
-        <ul>
+        <ul class="d-flex">
+          <li><%= link_to 'Home', root_path, class: 'nav-item nav-home' %></li>
+          <%= render 'layouts/nav_category' %>
+        </ul>
+        <ul class="d-flex">
           <% if current_user %>
-            <li><%= link_to 'Create Article', new_article_path, class: 'button is-primary'%></li>
-            <li><%= current_user.name %></li>
-            <li><%= link_to 'LOGOUT', sessions_destroy_path, class: 'button is-danger'%></li>
+            <li><%= link_to 'Create Article', new_article_path, class: 'nav-item' %></li>
+            <li><%= link_to current_user.name, root_path, class: 'nav-item' %></li>
+            <li><%= link_to 'LOGOUT', sessions_destroy_path, class: 'nav-item' %></li>
           <% else %>
-            <li><%= link_to 'LOGIN', sessions_log_in_path, class: 'button is-primary'%></li>
-            <li><%= link_to 'REGISTER', new_user_path, class: 'button is-primary'%></li>
+            <li><%= link_to 'LOGIN', sessions_log_in_path, class: 'nav-item' %></li>
+            <li><%= link_to 'REGISTER', new_user_path, class: 'nav-item' %></li>
           <% end %>
         </ul>
       </ul>
