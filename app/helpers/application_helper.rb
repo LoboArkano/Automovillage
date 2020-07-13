@@ -6,8 +6,4 @@ module ApplicationHelper
       @current_user = nil
     end
   end
-  
-  def voted?
-    Vote.where(:user_id => session[:user_id])
-  end
 end
