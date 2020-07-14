@@ -1,0 +1,34 @@
+$body-color: #797474;
+$white: #fff;
+$gray: rgb(117, 117, 117);
+$dark-gray: #4e443f;
+$orange: #fe6001;
+$pn100: 100%;
+
+.d-flex {
+  display: flex;
+}
+
+.w-100 {
+  width: $pn100;
+}
+
+.gray {
+  color: $gray;
+}
+
+.dark-gray {
+  color: $dark-gray;
+}
+
+.dark-gray-bg {
+  background-color: $dark-gray;
+}
+
+.orange {
+  color: $orange;
+}
+
+.orange-bg {
+  background-color: $orange;
+}
