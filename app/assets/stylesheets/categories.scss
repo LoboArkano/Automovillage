@@ -1,3 +1,23 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$orange: #fe6001;
+
+.mv-article {
+  background: no-repeat center top/cover;
+  height: 300px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: 32px;
+  padding-bottom: 15px;
+
+  .mv-title {
+    color: $orange;
+    margin-bottom: 20px;
+  }
+
+  .mv-text {
+    color: white;
+  }
+}

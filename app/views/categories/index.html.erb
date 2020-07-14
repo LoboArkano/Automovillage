@@ -1,11 +1,4 @@
-<div>Most voted article</div>
-<% article = Article.all.order('votes_count IS NULL, votes_count desc').first %>
-<%= article.title %><br>
-<%= article.author.name %><br>
-<%= article.text %><br>
-<p>
-  <%= image_tag(article.picture, width: 200, crop: :scale) %> 
-</p>
+<%= most_voted_article %>
 <div>Most view by category</div>
 <% @categories.collect do |category| %>
   <%= category.name %><br>
