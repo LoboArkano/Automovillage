@@ -3,6 +3,7 @@ $white: #fff;
 $gray: rgb(117, 117, 117);
 $dark-gray: #4e443f;
 $orange: #fe6001;
+$yellow: #f3f20d;
 $pn100: 100%;
 
 .d-flex {
@@ -31,4 +32,8 @@ $pn100: 100%;
 
 .orange-bg {
   background-color: $orange;
+}
+
+.bg-custom {
+  background: no-repeat center top/cover;
 }

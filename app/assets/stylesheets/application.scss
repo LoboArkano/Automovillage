@@ -15,8 +15,13 @@
  */
 @import 'variables';
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: $body-color;
+  max-width: 100vw;
 }
 
 .nav-container {
@@ -47,9 +52,6 @@ body {
   padding: 10px;
   height: 50px;
   align-items: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
 
   .footer-items-container {
     justify-content: space-around;

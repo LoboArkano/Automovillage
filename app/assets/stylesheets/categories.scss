@@ -4,7 +4,6 @@
 @import 'variables';
 
 .mv-article {
-  background: no-repeat center top/cover;
   height: 300px;
   flex-direction: column;
   justify-content: flex-end;
@@ -17,6 +16,32 @@
   }
 
   .mv-text {
-    color: white;
+    color: $white;
+  }
+}
+
+.categories-container {
+  height: 300px;
+
+  .mr-article {
+    width: 25%;
+    height: 300px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 0 15px 15px;
+
+    .category-name {
+      color: $white;
+      border-bottom: 2px solid $yellow;
+      padding-bottom: 3px;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      text-decoration: none;
+    }
+
+    .article-title {
+      color: $white;
+    }
   }
 }
