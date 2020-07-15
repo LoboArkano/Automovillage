@@ -57,6 +57,22 @@
     .art-info {
       width: 100%;
     }
+
+    .art-info {
+      .art-category-name,
+      .art-title,
+      .art-text,
+      .art-author,
+      .art-vote {
+        padding-top: 15px;
+        padding-left: 15px;
+      }
+    }
+  }
+
+  .article-container:nth-child(4n-1),
+  .article-container:nth-child(4n) {
+    flex-direction: row-reverse;
   }
 }
 
