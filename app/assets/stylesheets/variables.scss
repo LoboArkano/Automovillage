@@ -1,17 +1,30 @@
 $body-color: #797474;
 $white: #fff;
+$light-gray: #eeeded;
 $gray: rgb(117, 117, 117);
 $dark-gray: #4e443f;
 $orange: #fe6001;
 $yellow: #f3f20d;
-$pn100: 100%;
+$pn1: 100%;
 
 .d-flex {
   display: flex;
 }
 
 .w-100 {
-  width: $pn100;
+  width: $pn1;
+}
+
+.h-100 {
+  height: $pn1;
+}
+
+.white-bg {
+  background-color: $white;
+}
+
+.light-gray-bg {
+  background-color: $light-gray;
 }
 
 .gray {
@@ -34,6 +47,14 @@ $pn100: 100%;
   background-color: $orange;
 }
 
+.yellow {
+  color: $yellow;
+}
+
 .bg-custom {
   background: no-repeat center top/cover;
+}
+
+.bg-custom-2 {
+  object-fit: cover;
 }

@@ -45,3 +45,21 @@
     }
   }
 }
+
+.articles-container {
+  flex-wrap: wrap;
+
+  .article-container {
+    height: 300px;
+    width: 50%;
+
+    .img-container,
+    .art-info {
+      width: 100%;
+    }
+  }
+}
+
+.vote {
+  text-decoration: none;
+}
