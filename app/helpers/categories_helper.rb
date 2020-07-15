@@ -22,7 +22,7 @@ module CategoriesHelper
         if article != nil
           concat(
             content_tag(:article,
-                        content_tag(:p, link_to("#{category.name}", categories_show_path(category), class: "category-name")) + 
+                        content_tag(:p, link_to("#{category.name}", categories_show_path(category), class: "category-name"), class: 'category') + 
                         content_tag(:p, "#{article.title}", class: "article-title"),
                         class: 'mr-article bg-custom d-flex',
                         style: "background-image: url(#{article.picture.service_url})")

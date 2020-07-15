@@ -24,6 +24,58 @@ body {
   max-width: 100vw;
 }
 
+.d-flex {
+  display: flex;
+}
+
+.w-100 {
+  width: $pn1;
+}
+
+.h-100 {
+  height: $pn1;
+}
+
+.white-bg {
+  background-color: $white;
+}
+
+.light-gray-bg {
+  background-color: $light-gray;
+}
+
+.gray {
+  color: $gray;
+}
+
+.dark-gray {
+  color: $dark-gray;
+}
+
+.dark-gray-bg {
+  background-color: $dark-gray;
+}
+
+.orange {
+  color: $orange;
+}
+
+.orange-bg {
+  background-color: $orange;
+}
+
+.yellow {
+  color: $yellow;
+}
+
+.bg-custom {
+  background: no-repeat center top/cover;
+}
+
+.bg-custom-2 {
+  object-fit: cover;
+}
+
 .nav-container {
   background-color: $white;
   padding: 10px;

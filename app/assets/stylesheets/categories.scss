@@ -9,6 +9,17 @@
   justify-content: flex-end;
   padding-left: 32px;
   padding-bottom: 15px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $pn1;
+    height: $pn1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.6) 100%);
+  }
 
   .mv-title {
     color: $orange;
@@ -18,17 +29,33 @@
   .mv-text {
     color: $white;
   }
+
+  .mv-title,
+  .mv-text {
+    z-index: 10;
+  }
 }
 
 .categories-container {
   height: 300px;
 
   .mr-article {
+    position: relative;
     width: 25%;
     height: 300px;
     flex-direction: column;
     justify-content: space-between;
     padding: 15px 0 15px 15px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $pn1;
+      height: $pn1;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 87%, rgba(0, 0, 0, 0.6) 100%);
+    }
 
     .category-name {
       color: $white;
@@ -40,8 +67,10 @@
       text-decoration: none;
     }
 
+    .category,
     .article-title {
       color: $white;
+      z-index: 10;
     }
   }
 }
