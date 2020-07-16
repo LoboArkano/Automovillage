@@ -7,14 +7,14 @@ module CategoriesHelper
     article = Article.all.order('votes_count IS NULL, votes_count desc').first
     content_tag(:article, class: "mv-article bg-custom d-flex w-100", style: "background-image: url(#{article.picture.service_url})") do
       concat(
-        content_tag(:p, "#{article.title}", class: "mv-title") + 
-        content_tag(:p, "#{article.text}", class: "mv-text")
+        content_tag(:p, "#{article.title}", class: "chivo bold orange mv-title") + 
+        content_tag(:p, "#{sanitize(article.text.truncate(210, separator: ' '))}", class: "lato bold white mv-text")
       )
     end
   end
 
   def most_recent_art_by_category(categories)
-    content_tag(:div, class: "categories-container d-flex") do
+    content_tag(:div, class: "chivo bold categories-container d-flex") do
       categories.collect do |category|
         break if category.priority > 4
 
@@ -37,19 +37,19 @@ module CategoriesHelper
       articles.collect do |article|
         if current_user
           if article.votes.where(:user_id => session[:user_id], :article_id => article.id).size.zero?
-            vote = content_tag(:p, link_to("#{article.votes.size} - Add Vote", votes_create_path(article), class: "vote orange"), class: 'art-vote')
+            vote = content_tag(:p, link_to("#{article.votes.size} - Add Vote", votes_create_path(article), class: "vote orange"), class: 'chivo regular art-vote')
           else
-            vote = content_tag(:p, link_to("#{article.votes.size} - Remove Vote", votes_destroy_path(article), class: "vote gray"), class: 'art-vote')
+            vote = content_tag(:p, link_to("#{article.votes.size} - Remove Vote", votes_destroy_path(article), class: "vote gray"), class: 'chivo regular art-vote')
           end
         end
         concat(
           content_tag(:article,
                       content_tag(:div, cl_image_tag("#{article.picture.key}", class: "bg-custom-2 w-100 h-100"), class: "img-container") + 
                       content_tag(:div,
-                                  content_tag(:p, link_to("#{category.name}",  categories_show_path(category), class: "category-link orange"), class: "art-category-name") + 
-                                  content_tag(:p, "#{article.title}", class: "art-title") + 
-                                  content_tag(:p, "#{sanitize(article.text.truncate(200, separator: ' '))}", class: "art-text") + 
-                                  content_tag(:p, "Author: #{article.author.name}", class: "art-author") + 
+                                  content_tag(:p, link_to("#{category.name}",  categories_show_path(category), class: "category-link orange"), class: "open-sans bold art-category-name") + 
+                                  content_tag(:p, "#{article.title}", class: "open-sans bold art-title") + 
+                                  content_tag(:p, "#{sanitize(article.text.truncate(200, separator: ' '))}", class: "lato regular art-text") + 
+                                  content_tag(:p, "Author: #{article.author.name}", class: "chivo regular art-author") + 
                                   vote,
                                   class: "art-info"),
                       class: "article-container light-gray-bg d-flex")

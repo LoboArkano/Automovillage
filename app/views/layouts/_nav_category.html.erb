@@ -1,5 +1,5 @@
 <% categories_order_by_priority.collect do |category| %>
   <li>
-    <%= link_to category.name, categories_show_path(category.id), class: 'nav-item' %>
+    <%= link_to category.name.upcase, categories_show_path(category.id), class: 'nav-item' %>
   </li>
 <% end %>

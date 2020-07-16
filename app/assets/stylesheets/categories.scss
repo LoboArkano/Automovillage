@@ -18,16 +18,14 @@
     left: 0;
     width: $pn1;
     height: $pn1;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.6) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.8) 100%);
   }
 
   .mv-title {
-    color: $orange;
     margin-bottom: 20px;
   }
 
   .mv-text {
-    color: $white;
   }
 
   .mv-title,
@@ -54,7 +52,7 @@
       left: 0;
       width: $pn1;
       height: $pn1;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 87%, rgba(0, 0, 0, 0.6) 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.6) 100%);
     }
 
     .category-name {
@@ -95,6 +93,7 @@
       .art-vote {
         padding-top: 15px;
         padding-left: 15px;
+        padding-right: 8px;
       }
     }
   }

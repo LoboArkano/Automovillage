@@ -36,6 +36,10 @@ body {
   height: $pn1;
 }
 
+.white {
+  color: $white;
+}
+
 .white-bg {
   background-color: $white;
 }
@@ -84,6 +88,26 @@ body {
   background-color: rgb(238, 6, 6);
 }
 
+.chivo {
+  font-family: 'Chivo', Arial, Helvetica, sans-serif;
+}
+
+.open-sans {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+.lato {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
 .notice,
 .alert {
   text-align: center;
@@ -104,10 +128,10 @@ body {
     .nav-item {
       padding-right: 8px;
       text-decoration: none;
-      color: $gray;
+      color: $light-gray;
 
       &:visited {
-        color: $gray;
+        color: $light-gray;
       }
 
       &:hover {
@@ -127,7 +151,7 @@ body {
     align-items: center;
 
     .footer-item {
-      padding-right: 5px;
+      padding-right: 7px;
       text-decoration: none;
 
       &:hover {
