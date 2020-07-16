@@ -10,14 +10,14 @@ module ApplicationHelper
   def categories
     category_links = []
     categories_obj = categories_order_by_priority
-    if categories_obj
-      categories_obj.collect do |category|
-        category_links.push(link_to(category.name.upcase, categories_show_path(category.id), class: 'nav-item'))
-      end
-      for c_link in 0...category_links.length do
-        concat(content_tag(:li, category_links[c_link]))
-        break if c_link == 1
-      end
+    return if categories_obj.empty?
+
+    categories_obj.collect do |category|
+      category_links.push(link_to(category.name.upcase, categories_show_path(category.id), class: 'nav-item'))
+    end
+    (0...category_links.length).each do |c_link|
+      concat(content_tag(:li, category_links[c_link]))
+      break if c_link == category_links.length - 1
     end
   end
 
