@@ -41,6 +41,8 @@ module CategoriesHelper
           else
             vote = content_tag(:p, link_to("#{article.votes.size} - Remove Vote", votes_destroy_path(article), class: "vote gray"), class: 'chivo regular art-vote')
           end
+        else
+          vote = content_tag(:p, "#{article.votes.size} Vote(s)", class: 'chivo regular art-vote orange')
         end
         concat(
           content_tag(:article,
