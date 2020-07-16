@@ -5,12 +5,14 @@ module CategoriesHelper
 
   def most_voted_article
     article = Article.all.order('votes_count IS NULL, votes_count desc').first
-    cl_img = "background-image: url(#{article.picture.service_url})"
-    content_tag(:article, class: 'mv-article bg-custom d-flex w-100', style: cl_img) do
-      concat(
-        content_tag(:p, article.title.to_s, class: 'chivo bold orange mv-title') +
-        content_tag(:p, sanitize(article.text.truncate(210, separator: ' ')).to_s, class: 'lato bold white mv-text')
-      )
+    if article
+      cl_img = "background-image: url(#{article.picture.service_url})"
+      content_tag(:article, class: 'mv-article bg-custom d-flex w-100', style: cl_img) do
+        concat(
+          content_tag(:p, article.title.to_s, class: 'chivo bold orange mv-title') +
+          content_tag(:p, sanitize(article.text.truncate(210, separator: ' ')).to_s, class: 'lato bold white mv-text')
+        )
+      end
     end
   end
 

@@ -8,16 +8,16 @@ module ApplicationHelper
   end
 
   def categories
-    category_link = []
-    categories_order_by_priority.collect do |category|
-      category_link.push(link_to(category.name.upcase, categories_show_path(category.id), class: 'nav-item'))
-    end
-    content_tag(:li) do
-      category_link[0] +
-        category_link[1] +
-        category_link[2] +
-        category_link[3] +
-        category_link[4]
+    category_links = []
+    categories_obj = categories_order_by_priority
+    if categories_obj
+      categories_obj.collect do |category|
+        category_links.push(link_to(category.name.upcase, categories_show_path(category.id), class: 'nav-item'))
+      end
+      for c_link in 0...category_links.length do
+        concat(content_tag(:li, category_links[c_link]))
+        break if c_link == 1
+      end
     end
   end
 
