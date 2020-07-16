@@ -7,7 +7,7 @@ class VotesController < ApplicationController
     @vote = Vote.new(:user_id => session[:user_id], :article_id => params[:format])
 
     if @vote.save
-      redirect_to root_path
+      redirect_to request.referrer
     else
     end
   end
@@ -16,7 +16,7 @@ class VotesController < ApplicationController
     @vote = Vote.find_by(:user_id => session[:user_id], :article_id => params[:format])
 
     if @vote.destroy
-      redirect_to root_path
+      redirect_to request.referrer
     end
   end
 end
