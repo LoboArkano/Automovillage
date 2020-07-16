@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'variables';
 
+.main-container {
+  min-height: 100vh;
+}
+
 .mv-article {
   height: 550px;
   flex-direction: column;

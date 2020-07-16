@@ -5,7 +5,7 @@ module CategoriesHelper
 
   def most_voted_article
     article = Article.all.order('votes_count IS NULL, votes_count desc').first
-    return if article
+    return if article.nil?
 
     cl_img = "background-image: url(#{article.picture.service_url})"
     content_tag(:article, class: 'mv-article bg-custom d-flex w-100', style: cl_img) do
