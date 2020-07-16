@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice: 'Login completed'
 
     else
-      redirect_to sessions_log_in_path,  alert: "This name does not exist"
+      redirect_to sessions_log_in_path, alert: 'This name does not exist'
     end
   end
 

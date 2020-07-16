@@ -10,8 +10,8 @@ class ArticlesController < ApplicationController
     @article = user.articles.new(article_params)
     if @article.save
       params[:category_ids].each do |category_id|
-        Tagging.create(:article_id => @article.id,
-                        :category_id => category_id)
+        Tagging.create(article_id: @article.id,
+                       category_id: category_id)
       end
       redirect_to root_path, notice: 'Share your article!'
     else

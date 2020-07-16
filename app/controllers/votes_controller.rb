@@ -4,19 +4,14 @@ class VotesController < ApplicationController
   end
 
   def create
-    @vote = Vote.new(:user_id => session[:user_id], :article_id => params[:format])
+    @vote = Vote.new(user_id: session[:user_id], article_id: params[:format])
 
-    if @vote.save
-      redirect_to request.referrer
-    else
-    end
+    redirect_to request.referrer if @vote.save
   end
 
   def destroy
-    @vote = Vote.find_by(:user_id => session[:user_id], :article_id => params[:format])
+    @vote = Vote.find_by(user_id: session[:user_id], article_id: params[:format])
 
-    if @vote.destroy
-      redirect_to request.referrer
-    end
+    redirect_to request.referrer if @vote.destroy
   end
 end
