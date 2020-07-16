@@ -5,5 +5,6 @@ class Article < ApplicationRecord
   has_many :categories, through: :taggings
   has_one_attached :picture
 
-  # validates_acceptance_of :picture, content_type: ['picture/jpg', 'picture/jpeg', 'picture/png']
+  validates :title,:text, presence: :true
+  validates :title, length: { in: 1..40 }
 end

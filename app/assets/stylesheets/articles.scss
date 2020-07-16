@@ -2,13 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
-  height: auto !important;
+.art-form-container {
+  height: auto;
+  margin-top: 45px;
+  justify-content: center;
 
-  .column {
-    padding-top: 25px !important;
-    max-height: 1250px !important;
+  .art-column {
+    padding: 25px 30px 30px 30px;
+    max-height: 1250px;
     margin-bottom: 40px;
+    flex-direction: column;
+    justify-content: center;
+
+    .title {
+      margin-bottom: 15px;
+    }
 
     .app_input {
       resize: none;

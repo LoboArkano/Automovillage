@@ -1,4 +1,4 @@
-<%= form_with(url: sessions_path) do |f| %>
+<%= form_with(url: sessions_path, local: true) do |f| %>
   <%= f.label(:username_login, "Enter your username: " ) %>
   <br><br>
   <%= f.text_field(:username_login) %>

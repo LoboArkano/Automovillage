@@ -13,7 +13,9 @@ class ArticlesController < ApplicationController
         Tagging.create(:article_id => @article.id,
                         :category_id => category_id)
       end
-      redirect_to root_path
+      redirect_to root_path, notice: 'Share your article!'
+    else
+      redirect_to new_article_path, alert: @article.errors.full_messages
     end
   end
 

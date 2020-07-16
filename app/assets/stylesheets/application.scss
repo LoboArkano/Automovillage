@@ -76,6 +76,22 @@ body {
   object-fit: cover;
 }
 
+.notice {
+  background-color: rgb(26, 197, 26);
+}
+
+.alert {
+  background-color: rgb(238, 6, 6);
+}
+
+.notice,
+.alert {
+  text-align: center;
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
 .nav-container {
   background-color: $white;
   padding: 10px;
@@ -88,6 +104,7 @@ body {
     .nav-item {
       padding-right: 8px;
       text-decoration: none;
+      color: $gray;
 
       &:visited {
         color: $gray;

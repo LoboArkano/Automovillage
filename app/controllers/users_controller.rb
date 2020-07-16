@@ -9,7 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to sessions_log_in_path
+      redirect_to sessions_log_in_path, notice: 'Your account has been created!'
+    else
+      redirect_to new_user_path, alert: @user.errors.full_messages
     end
   end
 

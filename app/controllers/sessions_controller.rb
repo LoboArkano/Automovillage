@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
       session[:user_id] = @user_temp.id
       session[:username] = @user_temp.name
 
-      redirect_to root_path
+      redirect_to root_path, notice: 'Login completed'
 
     else
-      render json: { status: 401 }
+      redirect_to sessions_log_in_path,  alert: "This name does not exist"
     end
   end
 

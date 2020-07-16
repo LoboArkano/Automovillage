@@ -30,6 +30,16 @@
         </ul>
       </ul>
     </nav>
+    <% if notice.present? %>
+      <div class="notice">
+        <%= show_message(notice) %>
+      </div>
+    <% end %>
+    <% if alert.present? %>
+      <div class="alert">
+        <%= show_message(alert) %>
+      </div>
+    <% end %>
     <%= yield %>
     <footer class="footer-container dark-gray-bg d-flex w-100">
       <ul class="footer-items-container d-flex w-100">
