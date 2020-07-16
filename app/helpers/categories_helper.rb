@@ -51,7 +51,7 @@ module CategoriesHelper
                                   content_tag(:p, "#{sanitize(article.text.truncate(200, separator: ' '))}", class: "lato regular art-text") + 
                                   content_tag(:p, "Author: #{article.author.name}", class: "chivo regular art-author") + 
                                   vote,
-                                  class: "art-info"),
+                                  class: "art-info d-flex"),
                       class: "article-container light-gray-bg d-flex")
         )
       end

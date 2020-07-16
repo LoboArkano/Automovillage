@@ -4,7 +4,7 @@
 @import 'variables';
 
 .mv-article {
-  height: 300px;
+  height: 550px;
   flex-direction: column;
   justify-content: flex-end;
   padding-left: 32px;
@@ -25,9 +25,6 @@
     margin-bottom: 20px;
   }
 
-  .mv-text {
-  }
-
   .mv-title,
   .mv-text {
     z-index: 10;
@@ -35,12 +32,10 @@
 }
 
 .categories-container {
-  height: 300px;
-
   .mr-article {
     position: relative;
     width: 25%;
-    height: 300px;
+    height: 250px;
     flex-direction: column;
     justify-content: space-between;
     padding: 15px 0 15px 15px;
@@ -75,6 +70,7 @@
 
 .articles-container {
   flex-wrap: wrap;
+  min-height: 100vh;
 
   .article-container {
     height: 300px;
@@ -86,14 +82,25 @@
     }
 
     .art-info {
+      flex-direction: column;
+
       .art-category-name,
       .art-title,
       .art-text,
-      .art-author,
-      .art-vote {
+      .art-author {
         padding-top: 15px;
         padding-left: 15px;
-        padding-right: 8px;
+        padding-right: 15px;
+      }
+
+      .art-author {
+        margin-top: auto;
+        padding-bottom: 15px;
+      }
+
+      .art-vote {
+        padding-left: 15px;
+        padding-bottom: 15px;
       }
     }
   }
