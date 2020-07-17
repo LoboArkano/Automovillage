@@ -43,4 +43,18 @@ module ApplicationHelper
   def show_message(message)
     content_tag(:p, message)
   end
+
+  def get_votes(article)
+    if current_user
+      vote_link = if article.votes.where(user_id: session[:user_id], article_id: article.id).size.zero?
+                    link_to("#{n_votes(article)} - Add Vote", votes_create_path(article), class: 'vote orange')
+                  else
+                    link_to("#{n_votes(article)} - Remove Vote", votes_destroy_path(article), class: 'vote gray')
+                  end
+      vote = content_tag(:p, vote_link, class: 'chivo regular art-vote')
+    else
+      vote = content_tag(:p, "#{n_votes(article)} Vote(s)", class: 'chivo regular art-vote orange')
+    end
+    vote
+  end
 end

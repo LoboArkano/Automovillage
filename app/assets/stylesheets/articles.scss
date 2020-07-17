@@ -24,3 +24,37 @@
     }
   }
 }
+
+.article-container {
+  width: 75%;
+  margin: auto;
+  padding-top: 35px;
+  margin-top: 25px;
+
+  .article-show {
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .article_image {
+      height: 345px;
+      width: 65%;
+    }
+
+    .article_title {
+      font-size: 20px;
+    }
+
+    .article_title,
+    .article_test,
+    .article_author,
+    .art-vote {
+      margin-top: 15px;
+    }
+
+    .art-vote {
+      margin-bottom: 15px;
+    }
+  }
+}
