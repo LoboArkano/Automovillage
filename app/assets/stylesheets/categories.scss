@@ -56,12 +56,10 @@
     }
 
     .category-name {
+      width: fit-content;
       color: $white;
       border-bottom: 2px solid $yellow;
       padding-bottom: 3px;
-      width: -webkit-fit-content;
-      width: -moz-fit-content;
-      width: fit-content;
       text-decoration: none;
     }
 
