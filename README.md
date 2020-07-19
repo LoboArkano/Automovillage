@@ -22,6 +22,9 @@
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
+```
+   git clone git@github.com:LoboArkano/Automovillage.git
+```
 
 ### Prerequisites
 

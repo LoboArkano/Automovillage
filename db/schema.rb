@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_07_08_202738) do
     t.bigint "author_id", null: false
     t.string "title", null: false
     t.text "text", null: false
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "votes_count"

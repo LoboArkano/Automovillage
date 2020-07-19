@@ -1,10 +1,14 @@
 module ApplicationHelper
   def current_user
-    if session[:user_id]
-      @current_user ||= User.find(session[:user_id])
+    if user_id
+      @current_user ||= User.find(user_id)
     else
       @current_user = nil
     end
+  end
+
+  def user_id
+    session[:user_id]
   end
 
   def categories
@@ -46,7 +50,7 @@ module ApplicationHelper
 
   def get_votes(article)
     if current_user
-      vote_link = if article.votes.where(user_id: session[:user_id], article_id: article.id).size.zero?
+      vote_link = if article.votes.where(user_id: user_id, article_id: article.id).size.zero?
                     link_to("#{n_votes(article)} - Add Vote", votes_create_path(article), class: 'vote orange')
                   else
                     link_to("#{n_votes(article)} - Remove Vote", votes_destroy_path(article), class: 'vote gray')
