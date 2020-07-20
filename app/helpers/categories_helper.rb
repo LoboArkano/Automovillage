@@ -3,6 +3,10 @@ module CategoriesHelper
     Category.all.order(:priority)
   end
 
+  def most_recent_articles_from_category(category)
+    category.articles.order(created_at: :desc)
+  end
+
   def most_voted_article
     article = Article.all.order('votes_count IS NULL, votes_count desc').first
     return if article.nil?

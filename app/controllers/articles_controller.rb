@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   include ArticlesHelper
+  before_action :require_login, only: %i[new create]
 
   def new
     @article = Article.new
@@ -24,12 +25,22 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(article_id_param)
   end
 
   private
 
   def article_params
     params.require(:article).permit(:title, :text, :picture)
+  end
+
+  def require_login
+    return if current_user
+
+    redirect_to sessions_log_in_path, alert: 'You must be logged in to access this section'
+  end
+
+  def article_id_param
+    params[:id]
   end
 end

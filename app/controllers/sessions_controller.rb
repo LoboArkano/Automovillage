@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    @user_temp = User.find_by(name: params[:username_login])
+    @user_temp = User.find_by(name: input_name)
 
     if @user_temp
       session[:user_id] = @user_temp.id
@@ -24,5 +24,11 @@ class SessionsController < ApplicationController
     session[:username] = nil
 
     redirect_to root_path
+  end
+
+  private
+
+  def input_name
+    params[:username_login]
   end
 end

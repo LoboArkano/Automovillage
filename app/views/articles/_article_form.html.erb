@@ -1,4 +1,4 @@
-<% @categories = Category.all.order(:priority) %>
+<% @categories = categories_order_by_priority %>
 <%= form_with(model: @article, local: true) do |f| %>
   <%= f.label(:title, "Give it a title: " ) %><br>
   <%= f.text_field(:title, size: 50) %><br><br>

@@ -11,7 +11,9 @@
 ## Built With
 
 - Ruby v2.7.1
+
 - Ruby on Rails v5.2.3
+
 - Cloudinary
 
 ## Live Demo
@@ -28,9 +30,11 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+- Ruby: 2.6.3
+
+- Rails: 5.2.3
+
+- Postgres: >=9.5
 
 ### Setup
 
@@ -56,6 +60,25 @@ Start server with:
 ```
 
 Open `http://localhost:3000/` in your browser.
+
+You need to create at least one category, like this:
+
+```
+   Category.create(name: "Formula 1", priority: 1)
+```
+
+Create your user account only with your name:
+
+![image](https://user-images.githubusercontent.com/33432289/87968266-c141d680-ca85-11ea-9241-a1280afafee7.png)
+
+
+To create an article, select CREATE ARTICLE in the navbar and give a title, content, an image, and at least one category. You need to be logged to perform this action.
+![image](https://user-images.githubusercontent.com/33432289/87968849-ac197780-ca86-11ea-9f2e-c58e3bb76ece.png)
+
+To add a vote to an article, click the category section and click the Add Vote link. You need to be logged to perform this action.
+
+![image](https://user-images.githubusercontent.com/33432289/87969399-b38d5080-ca87-11ea-80b2-d964c9095e10.png)
+
 
 ### Run tests
 
@@ -100,6 +123,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 Give a ⭐️ if you like this project!
+
 Design idea by Nelson Sakwa on Behance
 
 ## 📝 License

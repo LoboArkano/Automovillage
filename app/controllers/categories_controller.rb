@@ -10,7 +10,14 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:format])
-    @articles = @category.articles.order(created_at: :desc)
+    Rails.logger.debug params.inspect
+    @category = Category.find(category_id)
+    @articles = most_recent_articles_from_category(@category)
+  end
+
+  private
+
+  def category_id
+    params[:format]
   end
 end
