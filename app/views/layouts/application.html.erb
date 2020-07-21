@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Automovillage</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+  </head>
+
+  <body>
+    <nav class="nav-container d-flex">
+      <ul class="open-sans bold links-container d-flex w-100">
+        <li><%= link_to 'AUTOMOVILLAGE', root_path, class: 'brand deco-none open-sans bold orange' %></li>
+        <ul class="d-flex">
+          <li><%= link_to 'HOME', root_path, class: 'nav-item nav-home open-sans bold' %></li>
+          <%= categories %>
+        </ul>
+        <ul class="d-flex">
+          <%= user_options %>
+        </ul>
+      </ul>
+    </nav>
+    <main class="main-container">
+      <%= search_notice %>
+      <%= search_alert %>
+      <%= yield %>
+    </main>
+    <footer class="footer-container dark-gray-bg d-flex w-100">
+      <ul class="chivo regular footer-items-container d-flex w-100">
+        <li class="d-flex"><%= link_to 'Automovillage', root_path, class: 'deco-none open-sans bold orange' %></li>
+        <ul class="d-flex">
+          <li><%= link_to 'Privacy Police', root_path, class: 'footer-item orange' %></li>
+          <li><%= link_to 'Terms & Conditions', root_path, class: 'footer-item orange' %></li>
+          <li><%= link_to 'Copyright 2014. All rights reserved.', root_path, class: 'footer-item gray' %></li>
+        </ul>
+        <ul class="footer-items-container d-flex">
+          <li><div class='footer-item gray'>Connect with us:</div></li>
+          <li class="social-container orange-bg d-flex">
+            <a href="https://twitter.com/LoboArcano92" target="_blank">
+              <i class="social-icon fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="social-container orange-bg d-flex">
+            <a href="https://www.linkedin.com/in/jose-roberto-perez-jimenez/" target="_blank">
+              <i class="social-icon fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li class="social-container orange-bg d-flex">
+            <a href="https://github.com/LoboArkano" target="_blank">
+              <i class="social-icon fab fa-github-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </ul>
+    </footer>
+  </body>
+</html>

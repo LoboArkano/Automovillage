@@ -1,0 +1,120 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+
+.main-container {
+  min-height: 100vh;
+}
+
+.mv-article {
+  height: 550px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: 32px;
+  padding-bottom: 15px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $pn1;
+    height: $pn1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.8) 100%);
+  }
+
+  .mv-title {
+    font-size: 19px;
+    margin-bottom: 20px;
+  }
+
+  .mv-title,
+  .mv-text {
+    z-index: 10;
+  }
+}
+
+.categories-container {
+  .mr-article {
+    position: relative;
+    width: 25%;
+    height: 250px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 0 15px 15px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $pn1;
+      height: $pn1;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.6) 100%);
+    }
+
+    .category-name {
+      width: fit-content;
+      color: $white;
+      border-bottom: 2px solid $yellow;
+      padding-bottom: 3px;
+      text-decoration: none;
+    }
+
+    .category,
+    .article-title {
+      color: $white;
+      z-index: 10;
+    }
+  }
+}
+
+.articles-container {
+  flex-wrap: wrap;
+  min-height: 100vh;
+
+  .article-container {
+    height: 300px;
+    width: 50%;
+
+    .img-container,
+    .art-info {
+      width: 100%;
+    }
+
+    .art-info {
+      flex-direction: column;
+
+      .art-category-name,
+      .art-title,
+      .art-text,
+      .art-link,
+      .art-author {
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .art-author {
+        margin-top: auto;
+        padding-bottom: 15px;
+      }
+
+      .art-vote {
+        padding-left: 15px;
+        padding-bottom: 15px;
+      }
+    }
+  }
+
+  .article-container:nth-child(4n-1),
+  .article-container:nth-child(4n) {
+    flex-direction: row-reverse;
+  }
+}
+
+.vote {
+  text-decoration: none;
+}

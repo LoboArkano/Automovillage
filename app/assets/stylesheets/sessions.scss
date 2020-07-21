@@ -1,0 +1,25 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  height: 90vh;
+  margin-top: 45px;
+  justify-content: center;
+
+  .column {
+    padding: 0 30px 30px 30px;
+    border-radius: 5px;
+    max-height: 250px;
+    min-width: 400px;
+    justify-content: center;
+    flex-direction: column;
+
+    .title {
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+}
