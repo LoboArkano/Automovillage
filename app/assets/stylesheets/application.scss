@@ -1,0 +1,184 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $body-color;
+  max-width: 100vw;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.w-100 {
+  width: $pn1;
+}
+
+.h-100 {
+  height: $pn1;
+}
+
+.white {
+  color: $white;
+}
+
+.white-bg {
+  background-color: $white;
+}
+
+.light-gray-bg {
+  background-color: $light-gray;
+}
+
+.gray {
+  color: $gray;
+}
+
+.dark-gray {
+  color: $dark-gray;
+}
+
+.dark-gray-bg {
+  background-color: $dark-gray;
+}
+
+.orange {
+  color: $orange;
+}
+
+.orange-bg {
+  background-color: $orange;
+}
+
+.yellow {
+  color: $yellow;
+}
+
+.bg-custom {
+  background: no-repeat center top/cover;
+}
+
+.bg-custom-2 {
+  object-fit: cover;
+}
+
+.deco-none {
+  text-decoration: none;
+}
+
+.notice {
+  background-color: rgb(26, 197, 26);
+}
+
+.alert {
+  background-color: rgb(238, 6, 6);
+}
+
+.chivo {
+  font-family: 'Chivo', Arial, Helvetica, sans-serif;
+}
+
+.open-sans {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+.lato {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.notice,
+.alert {
+  text-align: center;
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.nav-container {
+  background-color: $white;
+  padding: 10px;
+  height: 70px;
+  align-items: center;
+
+  .links-container {
+    justify-content: space-around;
+    align-items: center;
+
+    .brand {
+      font-size: 23px;
+    }
+
+    .nav-item {
+      padding-right: 8px;
+      text-decoration: none;
+      color: $light-gray;
+
+      &:visited {
+        color: $light-gray;
+      }
+
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}
+
+.footer-container {
+  padding: 10px;
+  height: 50px;
+  align-items: center;
+
+  .footer-items-container {
+    justify-content: space-around;
+    align-items: center;
+
+    .footer-item {
+      padding-right: 7px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline 1px solid;
+      }
+    }
+
+    .social-container {
+      border-radius: 50%;
+      margin-right: 7px;
+      width: 24px;
+      height: 24px;
+      justify-content: center;
+      align-items: center;
+
+      .social-icon {
+        color: $dark-gray;
+      }
+    }
+  }
+}

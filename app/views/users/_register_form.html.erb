@@ -1,0 +1,7 @@
+<%= form_with(model: User.new, local: true) do |f| %>
+  <%= f.label(:name, "Enter your username: " ) %>
+  <br><br>
+  <%= f.text_field(:name) %>
+  <br><br>
+  <%= f.submit('Create Account') %>
+<% end %>

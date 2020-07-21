@@ -1,0 +1,14 @@
+<% @categories = categories_order_by_priority %>
+<%= form_with(model: @article, local: true) do |f| %>
+  <%= f.label(:title, "Give it a title: " ) %><br>
+  <%= f.text_field(:title, size: 50) %><br><br>
+  <%= f.label(:text, "Article body: " ) %><br>
+  <%= f.text_area(:text, cols: 60, rows: 15, class: 'app_input') %><br><br>
+  <%= f.label(:picture, "Image: " ) %><br>
+  <%= f.file_field :picture, direct_upload: true %><br><br>
+  <% @categories.collect do |category| %>
+    <%= check_box_tag 'category_ids[]', category.id %>
+    <%= category.name %><br>
+  <% end %><br>
+  <%= f.submit('Create Article') %>
+<% end %>
