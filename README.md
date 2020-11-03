@@ -8,6 +8,10 @@
 
 ![image](https://user-images.githubusercontent.com/33432289/87835754-9ff9a400-c853-11ea-96b5-4380b18a4822.png)
 
+## Live Demo
+
+[Live version](https://automovillage.herokuapp.com/)
+
 ## Built With
 
 - Ruby v2.7.1
@@ -16,10 +20,11 @@
 
 - Cloudinary
 
-## Live Demo
+## Future Features
 
-[Live version](https://powerful-fjord-50645.herokuapp.com/)
+- Install trix gem to use a text editor 
 
+- Add a user profile
 
 ## Getting Started
 
@@ -72,10 +77,10 @@ Create your user account only with your name:
 ![image](https://user-images.githubusercontent.com/33432289/87968266-c141d680-ca85-11ea-9241-a1280afafee7.png)
 
 
-To create an article, select CREATE ARTICLE in the navbar and give a title, content, an image, and at least one category. You need to be logged to perform this action.
+To create an article, select CREATE ARTICLE in the navbar and give a title, content, image, and at least one category. You need to be logged in to perform this action.
 ![image](https://user-images.githubusercontent.com/33432289/87968849-ac197780-ca86-11ea-9f2e-c58e3bb76ece.png)
 
-To add a vote to an article, click the category section and click the Add Vote link. You need to be logged to perform this action.
+To add a vote to an article, click the category section and click the Add Vote link. You need to be logged in to perform this action.
 
 ![image](https://user-images.githubusercontent.com/33432289/87969399-b38d5080-ca87-11ea-80b2-d964c9095e10.png)
 
